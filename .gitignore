@@ -1,0 +1,17 @@
+﻿WaveAndPlay.Infrastructure/obj
+WaveAndPlay.Domain/obj
+WaveAndPlay.Application/obj
+WaveAndPlay.Test/obj
+WaveAndPlay.Web/bin
+WaveAndPlay.Application/bin
+.vs/WaveAndPlay/config
+.vs
+WaveAndPlay.Domain/bin
+WaveAndPlay.Infrastructure/bin
+WaveAndPlay.Web/obj/Debug/netcoreapp3.1/staticwebassets
+WaveAndPlay.Web/obj/Debug
+WaveAndPlay.Web/obj
+WaveAndPlay.Web/wwwroot
+WaveAndPlay.Web/Data/Migrations
+WaveAndPlay.Web/Properties
+WaveAndPlay.Web/WaveAndPlay.Web.csproj.user
