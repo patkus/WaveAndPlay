@@ -60,6 +60,8 @@ namespace WaveAndPlay.Web
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(name: "teams", pattern: "Teams/{*team}", defaults: new { controller = "Teams", action = "ViewTeam" });
+                endpoints.MapControllerRoute(name: "disciplines", pattern: "Disciplines/All", defaults: new { controller = "Disciplines", action = "ViewDisciplines" });
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

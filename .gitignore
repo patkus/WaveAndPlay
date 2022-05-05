@@ -15,3 +15,4 @@ WaveAndPlay.Web/wwwroot
 WaveAndPlay.Web/Data/Migrations
 WaveAndPlay.Web/Properties
 WaveAndPlay.Web/WaveAndPlay.Web.csproj.user
+WaveAndPlay.Test/bin
