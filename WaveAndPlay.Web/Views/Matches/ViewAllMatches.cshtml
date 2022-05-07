@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WaveAndPlay.Web.Models.MatchPlayer>
+
+@{
+    ViewData["Title"] = "Current Matches";
+}
+
+<h1>Current Matches</h1>
+
+<table class="table">
+    <tbody>
+    <tbody>
+        @foreach (var item in Model.GroupBy(x => x.Match.Id))
+        {
+            <tr>
+                <td>
+                    <b>@Html.DisplayFor(modelItem => item.Key)</b>
+                </td>
+            </tr>
+            @foreach (var player in item.OrderBy(x => x.Player.Nickname))
+            {
+                <tr>
+                    <td>
+                    @Html.DisplayFor(modelItem => player.Player.Nickname)
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
