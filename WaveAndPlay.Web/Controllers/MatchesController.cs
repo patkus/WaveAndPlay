@@ -26,5 +26,10 @@ namespace WaveAndPlay.Web.Controllers
 
             return View(matchPlayer);
         }
+
+        public void JoinMatch(int matchId)
+        {
+
+        }
     }
 }

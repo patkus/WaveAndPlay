@@ -7,23 +7,79 @@
 <h1>Current Matches</h1>
 
 <table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Match.Organizer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Match.Discipline)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Match.StartDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Match.EndDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Match.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Match.MinNumberOfPlayers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Match.MaxNumberOfPlayers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Match.NumberOfTeams)
+            </th>
+            <th>
+                Players
+            </th>
+        </tr>
+    </thead>
     <tbody>
-    <tbody>
-        @foreach (var item in Model.GroupBy(x => x.Match.Id))
+        @foreach (var modelItem in Model.GroupBy(x => x.Match))
         {
             <tr>
                 <td>
-                    <b>@Html.DisplayFor(modelItem => item.Key)</b>
+                    @Html.DisplayFor(x => modelItem.Key.Organizer.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => modelItem.Key.Discipline.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => modelItem.Key.StartDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => modelItem.Key.EndDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => modelItem.Key.Address.FullAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => modelItem.Key.MinNumberOfPlayers)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => modelItem.Key.MaxNumberOfPlayers)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => modelItem.Key.NumberOfTeams)
+                </td>
+                <td>
+                    @{
+                        var allPlayers = string.Empty;
+                        foreach (var player in modelItem)
+                        {
+                            allPlayers += player.Player.FullName + Environment.NewLine;
+                        }
+                    }
+                    <span>@allPlayers</span>
+                </td>
+                <td>
+                    @Html.ActionLink("Join", "JoinMatch", "Matches", new {matchId = modelItem.Key.Id})
                 </td>
             </tr>
-            @foreach (var player in item.OrderBy(x => x.Player.Nickname))
-            {
-                <tr>
-                    <td>
-                    @Html.DisplayFor(modelItem => player.Player.Nickname)
-                    </td>
-                </tr>
-            }
         }
     </tbody>
 </table>
