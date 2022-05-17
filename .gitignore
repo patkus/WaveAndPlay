@@ -16,3 +16,4 @@ WaveAndPlay.Web/Data/Migrations
 WaveAndPlay.Web/Properties
 WaveAndPlay.Web/WaveAndPlay.Web.csproj.user
 WaveAndPlay.Test/bin
+WaveAndPlay.Infrastructure/Migrations

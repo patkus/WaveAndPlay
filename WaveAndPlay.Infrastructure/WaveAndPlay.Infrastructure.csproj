@@ -1,11 +1,30 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <Compile Remove="Migrations\20220517173753_InitialCreate.cs" />
+    <Compile Remove="Migrations\20220517173753_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20220517191417_OrganizerUpdate.cs" />
+    <Compile Remove="Migrations\20220517191417_OrganizerUpdate.Designer.cs" />
+    <Compile Remove="Migrations\20220517191703_OrganizerUpdate.cs" />
+    <Compile Remove="Migrations\20220517191703_OrganizerUpdate.Designer.cs" />
+    <Compile Remove="Migrations\20220517191930_OrganizerUpdate.cs" />
+    <Compile Remove="Migrations\20220517191930_OrganizerUpdate.Designer.cs" />
+    <Compile Remove="Migrations\20220517192031_OrganizerUpdate.cs" />
+    <Compile Remove="Migrations\20220517192031_OrganizerUpdate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.25">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
