@@ -1,0 +1,65 @@
+﻿@model WaveAndPlay.Application.ViewModels.Match.ListMatchForListVm
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Start time
+            </th>
+            <th>
+                End time
+            </th>
+            <th>
+                Minimal number of players
+            </th>
+            <th>
+                Maximal number of players
+            </th>
+            <th>
+                Number of teams
+            </th>
+            <th>
+                Full amount to pay for a match
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Matches)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MinNumberOfPlayers)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaxNumberOfPlayers)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfTeams)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullAmount)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

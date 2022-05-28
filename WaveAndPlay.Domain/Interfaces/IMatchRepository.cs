@@ -9,6 +9,7 @@ namespace WaveAndPlay.Domain.Interfaces
         void DeleteMatch(int matchId);
         void EditMatch(int matchId);
         Match GetMatchById(int matchId);
+        IQueryable<Match> GetAllActiveMatches();
         IQueryable<MatchPlayer> GetMatchPlayers(int matchId);
     }
 }

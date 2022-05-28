@@ -7,8 +7,8 @@ namespace WaveAndPlay.Domain.Models
     public class Match
     {
         public int Id { get; set; }     
-        public DateTime StartDateTime { get; set; }
-        public DateTime EndDateTime { get; set; }
+        public DateTimeOffset StartDateTime { get; set; }
+        public DateTimeOffset EndDateTime { get; set; }
         public int MinNumberOfPlayers { get; set; }
         public int MaxNumberOfPlayers { get; set; }
         public int NumberOfTeams { get; set; }

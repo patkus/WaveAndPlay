@@ -21,4 +21,8 @@
     <ProjectReference Include="..\WaveAndPlay.Infrastructure\WaveAndPlay.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

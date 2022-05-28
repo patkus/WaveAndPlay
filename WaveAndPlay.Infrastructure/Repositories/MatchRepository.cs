@@ -43,7 +43,10 @@ namespace WaveAndPlay.Infrastructure.Repositories
         {
             return _context.Matches.Find(matchId);
         }
-
+        public IQueryable<Match> GetAllActiveMatches()
+        {
+            return _context.Matches.Where(x => x.EndDateTime <= DateTimeOffset.UtcNow);
+        }
         public IQueryable<MatchPlayer> GetMatchPlayers(int matchId)
         {
             return _context.MatchPlayer.Where(x => x.MatchId == matchId);
